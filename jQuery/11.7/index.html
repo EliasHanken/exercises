@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex11.3 Solution: Ajax</title>
+    <link href="../../base-style.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<article>
+    <h1>Solution for Dice but with jQuery</h1>
+    <p>This is a solution for <a href="../../exercises/ex11.3-ajax-get">Exercise 11.3</a>.
+        See the source code for this file.</p>
+</article>
+
+<h2>Part 1 - throw a dice</h2>
+<button onclick="sendDiceRequest()">Throw a dice</button>
+<p id="dice-val"></p>
+
+<script>
+    // Create a request using jQuery.
+    function sendDiceRequest(){
+        $.get("https://web-tek.ninja/php_backend/throw_a_dice.php",function (response){
+            $("#dice-val").html("You threw " + response);
+        })
+    }
+</script>
+
+</body>
+</html>
